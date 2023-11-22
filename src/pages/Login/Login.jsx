@@ -4,7 +4,7 @@ import SignUp from './SignUp';
 import axios from 'axios';
 // import { useCookies } from 'react-cookie';
 
-const Login = ({ onClose }) => {
+const Login = ({ onClose, onLogin }) => {
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
   const [isSignUpMode, setSignUpMode] = useState(false);
@@ -38,8 +38,14 @@ const Login = ({ onClose }) => {
       // console.log(response);
       // const token = response.data.token;
 
+      // onLogin 함수를 호출하여 토큰을 부모 컴포넌트로 전달
+      if (typeof onLogin === 'function') {
+        onLogin(token);
+      }
+
       console.log('로그인 성공:', token);
       alert('로그인이 성공적으로 완료되었습니다.');
+
       onClose();
     } catch (error) {
       console.error('로그인 실패:', error);
