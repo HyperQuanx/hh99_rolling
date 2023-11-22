@@ -5,14 +5,10 @@ import { NavbarBox, NavbarLogin, NavbarTitle } from './styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import Modal from '../Login/Login';
-import { useCookies } from 'react-cookie';
 
 const Navbar = () => {
   const [isModalOpen, setModalOpen] = useState(false);
-
-  const [isSignUpMode, setSignUpMode] = useState(false);
-
-  const [cookies, removeCookie] = useCookies(['token']);
+  const [isAuthenticated, setAuthenticated] = useState(false); // 인증 상태를 관리
 
   const handleOpenModal = () => {
     setModalOpen(true);
@@ -24,11 +20,13 @@ const Navbar = () => {
 
   const handleLogout = () => {
     alert('로그아웃되었습니다!');
-    // 쿠키 제거
-    removeCookie('token');
-    // Navbar.jsx에서 사용할 로그아웃 로직 수행
-    setSignUpMode(prevSignUpMode => false);
+    setAuthenticated(false); // 인증 상태 업데이트
     // 모달을 닫음
+    setModalOpen(false);
+  };
+
+  const handleLogin = () => {
+    setAuthenticated(true);
     setModalOpen(false);
   };
 
@@ -37,7 +35,7 @@ const Navbar = () => {
       <NavbarBox>
         <NavbarTitle>Rolling-Paper ★</NavbarTitle>
         <NavbarLogin>
-          {isSignUpMode ? (
+          {isAuthenticated ? (
             <button
               onClick={handleLogout}
               style={{
@@ -67,7 +65,7 @@ const Navbar = () => {
             </button>
           )}
         </NavbarLogin>
-        {isModalOpen && <Modal onClose={handleCloseModal} />}
+        {isModalOpen && <Modal onClose={handleCloseModal} onLogin={handleLogin} />}
       </NavbarBox>
     </div>
   );
