@@ -9,23 +9,30 @@ import { StMyWrap, StName } from './styles';
 
 const MyPage = () => {
   const params = useParams();
-  const [rollingPaper, setRollingPaper] = useState(null);
+  const [rollingPaper, setRollingPaper] = useState(
+    {userId: '', userName: '', bio: '', comments: [{comment: ''},{comment: ''}]}
+  );
 
-  useQuery("rollingPapers", getPapers, {
+  const {isError, data} = useQuery("myPage", getPapers, {
     onSuccess: (data) => {
-      const foundData = data.find((item) => item.id == params.id);
+      const foundData = data.find((item) => item.userId == params.userId);
       if (foundData) {
         setRollingPaper(foundData); // 찾은 데이터를 state에 업데이트->렌더링
-      };
+      }; 
     }
   });
+  if (isError) return <div>마이페이지 에러 오류</div>
+
+  // console.log("data",data);
+  // console.log("params",params);
+  // console.log("rollingPaper",rollingPaper);
 
   return (
     <StWrap>
-      <StName>{rollingPaper?.userName}님의 롤링페이지✨</StName>
+      <StName>{rollingPaper.userName}님의 롤링페이지✨</StName>
       <StMyWrap>
       <MyBio rollingPaper={rollingPaper}/>
-      <MyPapers rollingPaper={rollingPaper}/>
+      <MyPapers/>
       </StMyWrap>
     </StWrap>
     );
