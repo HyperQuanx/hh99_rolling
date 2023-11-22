@@ -1,0 +1,95 @@
+{
+  "signup": [
+    {
+      "id": "1",
+      "userId": "han",
+      "password": "test1234",
+      "username": "한덕용"
+    },
+    {
+      "id": "2",
+      "userId": "ha",
+      "password": "test1234",
+      "username": "하다연"
+    },
+    {
+      "id": "3",
+      "userId": "jan",
+      "password": "test1234",
+      "username": "전아영"
+    },
+    {
+      "id": "4",
+      "userId": "ryu",
+      "password": "test1234",
+      "username": "류시영"
+    },
+    {
+      "userId": "qwer",
+      "password": "qwer1234",
+      "username": "qwer",
+      "id": "VTHtHHP"
+    },
+    {
+      "userId": "회원가입",
+      "password": "tjdrhd",
+      "username": "한거냐?",
+      "id": "3_ouwdx"
+    },
+    {
+      "userId": "ㅎㅇ",
+      "password": "gd",
+      "username": "gd",
+      "id": "j6dx2a8"
+    },
+    {
+      "userId": "qwe",
+      "password": "qwe",
+      "username": "qwe",
+      "id": "BQPvYdm"
+    },
+    {
+      "userId": "한덕용",
+      "password": "qwer1234",
+      "username": "한덕용",
+      "id": "6Ex1SL3"
+    },
+    {
+      "userId": "123",
+      "password": "12",
+      "username": "12",
+      "id": "1404b57"
+    },
+    {
+      "userId": "123",
+      "password": "123",
+      "username": "123",
+      "id": "kC3x5Dw"
+    },
+    {
+      "userId": "123",
+      "password": "123",
+      "username": "123",
+      "id": "dlvV3by"
+    },
+    {
+      "userId": "qwer1234",
+      "password": "qwer1234",
+      "username": "한덕용",
+      "id": "l5HR1bf"
+    },
+    {
+      "userId": "시영님",
+      "password": "wp qnfmadp",
+      "username": "봐주세요",
+      "id": "tBq0rUf"
+    },
+    {
+      "userId": "qwer1234",
+      "password": "qwer1234",
+      "userName": "한덕용",
+      "id": "H8EmWSQ"
+    }
+  ]
+}
+
