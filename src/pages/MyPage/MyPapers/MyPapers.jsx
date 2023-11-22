@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { StInput, StPaperWrap,StPaper, StPaperBox } from './style'
+import { StInput, StPaperWrap,StPaper, StPaperBox } from './styles'
 import { useMutation, useQuery, useQueryClient } from 'react-query'
 import { addCmt, deleteCmt, getCmt } from '../../../api/rollingPaper';
 import { useParams } from 'react-router-dom';
