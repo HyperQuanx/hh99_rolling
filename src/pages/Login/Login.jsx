@@ -8,7 +8,7 @@ const Login = ({ onClose }) => {
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
   const [isSignUpMode, setSignUpMode] = useState(false);
-  const BASE_URL = 'http://54.180.153.179/api';
+  const BASE_URL = 'https://port-0-rolling-paper-3szcb0g2blp9q5y23.sel5.cloudtype.app/api';
   // const [cookies, setCookie, removeCookie] = useCookies(['token']);
 
   const handleLogin = async () => {
