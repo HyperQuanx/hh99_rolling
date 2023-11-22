@@ -26,7 +26,7 @@ const Main = () => {
         <Screen>
           <MainTyping />
         </Screen>
-        
+
         <StPaperList>
           {data?.map(item => (
             <StPaper key={item.userId} onClick={() => myPageClick(item.userId)}>
