@@ -12,7 +12,7 @@ const SignUp = ({ onClose }) => {
   const [newUserName, setNewUserName] = useState({
     username: '',
   });
-  const BASE_URL = 'http://52.79.226.181/api';
+  const BASE_URL = 'https://port-0-rolling-paper-3szcb0g2blp9q5y23.sel5.cloudtype.app/api';
 
   const handleSignUp = async () => {
     try {
