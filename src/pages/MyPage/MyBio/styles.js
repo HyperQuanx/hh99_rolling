@@ -1,43 +1,51 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const StBioWrap = styled.div`
   width: 20%;
-  background-color: #eeeeee;
+  background-color: #a7e9af;
   border: 3px solid #111111;
   position: relative;
-  border-radius: 10px 0 0 10px;
-`;
-
+`
+  
 const StName = styled.div`
   height: 200px;
+  padding: 10px;
   font-size: 30px;
+  background-color: #ffd1dc;
   border-bottom: 3px solid #111111;
-  background-color: #a7e9af;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px 0 0 0;
-`;
+`
 
 const StBio = styled.div`
-  height: 400px;
+  height: 60%;
+  padding: 10px;
   font-size: 30px;
-  display: flex;
-  justify-content: center;
-`;
+  background-color: #a7e9af;
+`
+
+const StBold = styled.span`
+  font-size: 40px;
+  font-weight: 800;
+  `
 
 const StForm = styled.form`
   width: 100%;
-  height: 50px;
   position: absolute;
-  bottom: 0;
-  display: flex;
-`;
+  bottom:0;
+`
 
 const StTextInput = styled.textarea`
+  border: none;
+  border-radius: 8px;
   display: block;
-  margin: 0 auto;
-  border-radius: 5px;
-`;
+  resize: none;
+  &::placeholder {
+  color: #a7e9af;
+  font-weight: bold;
+}
+`
 
-export { StBioWrap, StName, StBio, StForm, StTextInput };
+const StBtn = styled.button`
+  margin: 10px auto;
+`
+
+export {StBioWrap,StName,StBio,StBold,StForm,StTextInput,StBtn}
