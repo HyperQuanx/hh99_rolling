@@ -13,8 +13,13 @@ export const NavbarBox = styled.div`
   background: linear-gradient(45deg, #ffd1dc, #a7e9af);
 `;
 
-export const NavbarTitle = styled.div`
+export const NavbarTitle = styled.a`
   margin-left: 30px;
+  color: black;
+  &:visited {
+    color: inherit;
+    text-decoration: inherit;
+  }
 `;
 
 export const NavbarLogin = styled.div`
@@ -30,7 +35,6 @@ export const FooterContainer = styled.div`
   padding: 20px 0 0 0;
   border-top: 1px solid black;
   flex-shrink: 0;
-  position: relative;
   bottom: 0;
   width: 95%;
   height: 100%;
