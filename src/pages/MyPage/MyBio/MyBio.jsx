@@ -1,63 +1,50 @@
-import React, { useState } from 'react';
-import { StBioWrap, StName, StBio, StTextInput, StForm } from './styles';
+import React, { useState } from 'react'
+import { StBioWrap,StName,StBio, StTextInput, StForm, StBtn, StBold } from './styles';
 import { useMutation, useQueryClient } from 'react-query';
 import { putBio } from '../../../api/rollingPaper';
-import { faArrowDown, faPen, faUser } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const MyBio = ({ rollingPaper }) => {
-  const [bio, setBio] = useState('');
+
+const MyBio = ({rollingPaper}) => {
+  const [bio, setBio] = useState("");
 
   const queryClient = useQueryClient();
   const mutation = useMutation(putBio, {
     onSuccess: () => {
       alert('자기소개 입력 완료!');
-      console.log('bio 입력 mutation성공', bio);
-      queryClient.invalidateQueries('rollingPapers');
+      console.log("bio 입력 mutation성공",bio);
+      queryClient.invalidateQueries("rollingPapers");
     },
-  });
+  })
 
-  const submitHandler = event => {
+  const submitHandler = (event) => {
     event.preventDefault();
-    console.log('bio submit성공', bio);
+    console.log("bio submit성공",bio);
 
     // 빈칸 검사
     if (!bio) {
-      return alert('자기소개 내용을 작성해주세요👼');
-    }
+      return alert("자기소개 내용을 작성해주세요👼");
+    };
 
     const newBio = {
       ...rollingPaper,
-      bio: bio,
+      bio:bio
     };
 
     mutation.mutate(newBio);
-    // setBio("");
+    setBio("");
   };
   return (
-    <StBioWrap>
-      <StName>
-        <FontAwesomeIcon icon={faUser} style={{ marginRight: '10px' }} />
-        {rollingPaper.userName}{' '}
-      </StName>
-      <StBio>
-        <div>
-          <div style={{ marginTop: '10px', marginBottom: '20px' }}>자기소개</div>
-          <div style={{ textAlign: 'center' }}>
-            <FontAwesomeIcon icon={faArrowDown} />
-          </div>
-          <div>-------</div>
-          <div style={{ textAlign: 'center' }}>{rollingPaper.bio}</div>
-        </div>
-        <StForm onSubmit={submitHandler}>
-          <StTextInput value={bio} onChange={e => setBio(e.target.value)} />
-          <button type="submit" style={{ fontSize: '20px' }}>
-            <FontAwesomeIcon icon={faPen} />
-          </button>
-        </StForm>
-      </StBio>
-    </StBioWrap>
-  );
-};
+  <StBioWrap>
+    <StName>{rollingPaper.userName}님에게 전달하고 싶은 말을 남겨주세요💗 </StName>
+    <StBio>{rollingPaper.userName}님의 자기소개 : <StBold>{rollingPaper.bio}</StBold>
+    <StForm onSubmit={submitHandler}>
+    <StTextInput rows={10} cols={30} placeholder=' 자기소개를 입력해주세요!'
+    value={bio} onChange={(e) => setBio(e.target.value)}/>
+    <StBtn type="submit">입력</StBtn>
+    </StForm>
+    </StBio>
+  </StBioWrap>
+  )
+}
 
-export default MyBio;
+export default MyBio
