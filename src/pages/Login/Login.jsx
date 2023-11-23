@@ -32,11 +32,19 @@ const Login = ({ onClose, onLogin }) => {
         },
       );
       // 'Authorization' 헤더에서 토큰을 추출합니다.
-      const token = response.headers['authorization'] || response.headers['Authorization'];
+      // const token = response.headers['authorization'] || response.headers['Authorization'];
       // setCookie('token', token);
 
       // console.log(response);
       // const token = response.data.token;
+
+      // 네트워크 탭의 헤더에는 Authorization: Token 응답이 확인되는데 !
+      // response로 받은 결과를 찍어보면 헤더도 토큰도 아무것도 찾아볼 수가 없음.....
+      // 그래서 서버쪽에서 data에 토큰을 같이 담아보내주시도록 수정요청드림.
+      const token = response.data.accessToken; // 서버 응답의 data에서 토큰 추출
+      sessionStorage.setItem('accessToken', token); // sessionStorage에 토큰 저장
+      console.log("response",response);
+      console.log("response.data.accessToken",response.data.accessToken);
 
       // onLogin 함수를 호출하여 토큰을 부모 컴포넌트로 전달
       if (typeof onLogin === 'function') {
