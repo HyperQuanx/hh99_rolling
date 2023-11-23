@@ -33,7 +33,7 @@ const Navbar = () => {
   return (
     <div style={{ display: 'flex', justifyContent: 'center' }}>
       <NavbarBox>
-        <NavbarTitle>Rolling-Paper ★</NavbarTitle>
+        <NavbarTitle href="/">Rolling-Paper ★</NavbarTitle>
         <NavbarLogin>
           {isAuthenticated ? (
             <button
