@@ -20,6 +20,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     alert('로그아웃되었습니다!');
+    sessionStorage.removeItem('accessToken');
     setAuthenticated(false); // 인증 상태 업데이트
     // 모달을 닫음
     setModalOpen(false);
