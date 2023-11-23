@@ -1,39 +1,49 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const StPaperWrap = styled.div`
   width: 80%;
   background-color: #eeeeee;
   border: 3px solid #111111;
   border-left: none;
-  border-radius: 0 10px 10px 0;
-`;
+  `
+
+const StLabel = styled.label`
+  margin: 16px;
+  font-size: 26px;
+`
 
 const StInput = styled.input`
   width: 70%;
   height: 60px;
-  margin: 10px;
+  margin-top: 20px;
   background-color: #ffffff;
   border: none;
   border-radius: 10px;
-`;
+  &::placeholder {
+  color: #ffd1dc;
+}
+`
+
+const StBtn = styled.button`
+  margin: 16px;
+  background-color: #ffd1dc;
+  `
 
 const StPaperBox = styled.div`
-  width: 96%;
-  height: 80%;
   margin: 20px;
-  background-image: url('../public/wkf.png');
-  background-size: cover;
+  padding: 20px;
+  height: 80%;
+  background-color: #dddddd;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-`;
+`
 
 const StPaper = styled.div`
-  width: 200px;
-  height: 100px;
+  width: 16%;
+  height: 160px;
   padding: 20px;
-  font-size: 30px;
-  background-color: rgba(255, 255, 255, 0.5);
-`;
+  background-color: #ffffff;
+`
 
-export { StPaperWrap, StInput, StPaper, StPaperBox };
+export {StPaperWrap,StLabel,StInput,StBtn,StPaper,StPaperBox}
